@@ -8,15 +8,18 @@ public class RemoveDuplicatesFromSortedList2
 
     private Node removeDuplicatesCompletely(Node head)
     {
-        if (head == null) {
+        if (head == null)
+        {
             return null;
         }
         Node FakeHead = new Node(0);
         FakeHead.next = head;
         Node pre = FakeHead;
         Node cur = head;
-        while (cur != null) {
-            while (cur.next != null && cur.data == cur.next.data) {
+        while (cur != null)
+        {
+            while (cur.next != null && cur.data == cur.next.data)
+            {
                 cur = cur.next;
             }
             if (pre.next == cur)

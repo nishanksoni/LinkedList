@@ -3,7 +3,8 @@ package Interviewbit;
 import static LinkedListStructure.LinkedListStructure.*;
 
 // Runner technique
-// Find the middle node -> reverse the second half thank link both
+// Find the middle node -> reverse the second half
+// than link both
 public class reorderList {
 
 

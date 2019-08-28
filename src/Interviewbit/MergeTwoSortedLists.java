@@ -4,8 +4,7 @@ import static LinkedListStructure.LinkedListStructure.*;
 
 public class MergeTwoSortedLists {
 
-    public Node mergeTwoLists(Node l1, Node l2)
-    {
+    public Node mergeTwoLists(Node l1, Node l2) {
         Node h = new Node(0);
         Node ans = h;
         while (l1 != null && l2 != null) {
@@ -43,8 +42,7 @@ public class MergeTwoSortedLists {
     }
 
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         MergeTwoSortedLists list1 = new MergeTwoSortedLists();
         MergeTwoSortedLists list2 = new MergeTwoSortedLists();
 
