@@ -16,7 +16,6 @@ public class reverseNodesInkGroups {
             node = node.next;
             count++;
         }
-
         // 2.reverse k node at current level
         Node previous = reverseInGroups(node, k); //pre node point to the the answer of sub-problem // recursive call
         // Now our usual reversal method until the count > 0
