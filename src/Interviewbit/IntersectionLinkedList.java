@@ -9,12 +9,10 @@ import static LinkedListStructure.LinkedListStructure.*;
 //Pointer B also walks through List B and List A.
 //Regardless of the length of the two lists, the sum of the lengths are the same (i.e. a+b = b+a),
 // which means that the pointers sync up at the point of intersection.
-public class IntersectionLinkedList
-{
+public class IntersectionLinkedList {
     Node head1, head2;
 
-    Node getIntersectionNode(Node headA, Node headB)
-    {
+    Node getIntersectionNode(Node headA, Node headB) {
         // Base condition
         if (headA == null || headB == null) {
             return null;

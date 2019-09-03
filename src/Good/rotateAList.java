@@ -1,10 +1,12 @@
 package Good;
+// Rotate  a list up to K nodes
 
 import LinkedListStructure.LinkedListStructure.*;
 
 import static LinkedListStructure.LinkedListStructure.*;
 
 //https://leetcode.com/problems/rotate-list/discuss/22715/Share-my-java-solution-with-explanation
+// https://www.geeksforgeeks.org/rotate-a-linked-list/
 // The code has three parts.
 // 1.Get the length
 // 2.Move to the (l-K%l)th node

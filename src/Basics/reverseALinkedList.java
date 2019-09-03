@@ -1,10 +1,11 @@
 package Basics;
 
 import static LinkedListStructure.LinkedListStructure.*;
-
 //Time Complexity: O(n)
 // Space Complexity: O(1)
 // Basic linked list reversal where you only need to change the pointers
+// https://www.geeksforgeeks.org/reverse-a-linked-list/ : watch GIF
+// https://leetcode.com/problems/reverse-linked-list/
 public class reverseALinkedList {
 
     private void reverse() {

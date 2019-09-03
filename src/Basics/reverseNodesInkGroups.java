@@ -1,10 +1,12 @@
 package Basics;
+// https://leetcode.com/problems/reverse-nodes-in-k-group/
 
 import static LinkedListStructure.LinkedListStructure.*;
 
 public class reverseNodesInkGroups {
 
 
+    // 1st Way
     private Node reverseInGroups(Node head, int k) {
         //1. test weather we have more then k node left, if less then k node left we just return head
         Node node = head;
@@ -32,9 +34,31 @@ public class reverseNodesInkGroups {
     }
 
 
+    // 2nd way - Usual way
+    public Node reveseGrps(Node head, int k) {
+        int count = 0;
+        Node next = null;
+        Node current = head;
+        Node prev = null;
+        while (current != null && count < k) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+            count++;
+        }
+        if (next != null) {
+            head.next = reveseGrps(next, k);
+        }
+        Node temp = prev;
+        return temp;
+    }
+
+
     public static void main(String[] args) {
         reverseNodesInkGroups reverseNodesInGroups = new reverseNodesInkGroups();
 
+        push(80);
         push(70);
         push(60);
         push(50);
@@ -45,9 +69,23 @@ public class reverseNodesInkGroups {
 
         printList(); // 10 20 30 40 50 60 70
 
-        Node node = reverseNodesInGroups.reverseInGroups(head, 3);
+        Node temp = head;
+        Node temp1 = head;
+        Node node1 = reverseNodesInGroups.reveseGrps(temp, 3);
 
-        printList(node);
+        printList(node1);
+
+
+        Node node11 = reverseNodesInGroups.reverseInGroups(temp1, 3);
+        printList(node11);
+
+
+
+
+      /*  Node node = reverseNodesInGroups.reverseInGroups(head, 3);
+
+        printList(node);*/
+
 
     }
 

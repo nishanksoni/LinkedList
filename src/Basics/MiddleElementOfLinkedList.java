@@ -4,6 +4,8 @@ import static LinkedListStructure.LinkedListStructure.*;
 
 // Runner technique
 // slow_runner and fast_runner approach
+// https://leetcode.com/problems/middle-of-the-linked-list/
+// https://www.geeksforgeeks.org/write-a-c-function-to-print-the-middle-of-the-linked-list/
 public class MiddleElementOfLinkedList {
 
     void printMiddle() {
@@ -22,7 +24,6 @@ public class MiddleElementOfLinkedList {
         System.out.println("The middle element is " + slow_runner.data);
     }
 
-
     public static void main(String[] args) {
         MiddleElementOfLinkedList middleElementOfALinkedList = new MiddleElementOfLinkedList();
 
@@ -32,7 +33,6 @@ public class MiddleElementOfLinkedList {
         push(4);
         push(5);
         push(6);
-
 
         printList();
 

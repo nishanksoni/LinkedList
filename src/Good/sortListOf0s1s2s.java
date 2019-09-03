@@ -3,9 +3,7 @@ package Good;
 // https://www.geeksforgeeks.org/sort-a-linked-list-of-0s-1s-or-2s/
 // 1st is basic way like we do for array
 
-import LinkedListStructure.LinkedListStructure.Node;
-
-import java.util.Arrays;
+import LinkedListStructure.LinkedListStructure.*;
 
 import static LinkedListStructure.LinkedListStructure.*;
 
@@ -33,6 +31,7 @@ public class sortListOf0s1s2s {
                 // count[0] = 2 so we will fill first two positions in linked list till my count is 2 than we will increase the positions
             } else {
                 temp.data = position;
+                System.out.println(position);
                 --count[position];
                 temp = temp.next;
             }
