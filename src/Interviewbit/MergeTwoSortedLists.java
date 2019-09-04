@@ -2,9 +2,29 @@ package Interviewbit;
 
 import static LinkedListStructure.LinkedListStructure.*;
 
+// https://leetcode.com/problems/merge-two-sorted-lists/
+// https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/
 public class MergeTwoSortedLists {
 
-    public Node mergeTwoLists(Node l1, Node l2) {
+    // Using Recursion
+    public Node mergeTwoListUsingRecursion(Node l1, Node l2) {
+        if (l1 == null) {
+            return l2;
+        }
+        if (l2 == null) {
+            return l1;
+        }
+        if (l1.data < l2.data) {
+            l1.next = mergeTwoListUsingRecursion(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoListUsingRecursion(l1, l2.next);
+            return l2;
+        }
+    }
+
+    // Iterative way
+    public Node mergeTwoListsIterative(Node l1, Node l2) {
         Node h = new Node(0);
         Node ans = h;
         while (l1 != null && l2 != null) {
@@ -27,25 +47,8 @@ public class MergeTwoSortedLists {
         return ans.next;
     }
 
-    public Node mergeKLists(Node[] lists) {
-        if (lists.length == 1) {
-            return lists[0];
-        }
-        if (lists.length == 0) {
-            return null;
-        }
-        Node head = mergeTwoLists(lists[0], lists[1]);
-        for (int i = 2; i < lists.length; i++) {
-            head = mergeTwoLists(head, lists[i]);
-        }
-        return head;
-    }
-
-
     public static void main(String[] args) {
         MergeTwoSortedLists list1 = new MergeTwoSortedLists();
         MergeTwoSortedLists list2 = new MergeTwoSortedLists();
-
-
     }
 }
