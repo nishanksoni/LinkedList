@@ -2,33 +2,29 @@ package Interviewbit;
 
 import static LinkedListStructure.LinkedListStructure.*;
 
+// Hard Question
 //  delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
-public class RemoveDuplicatesFromSortedList2
-{
+// https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/discuss/28335/My-accepted-Java-code
+public class RemoveDuplicatesFromSortedList2 {
 
-    private Node removeDuplicatesCompletely(Node head)
-    {
-        if (head == null)
-        {
+    private Node removeDuplicatesCompletely(Node head) {
+        if (head == null) {
             return null;
         }
         Node FakeHead = new Node(0);
         FakeHead.next = head;
-        Node pre = FakeHead;
-        Node cur = head;
-        while (cur != null)
-        {
-            while (cur.next != null && cur.data == cur.next.data)
-            {
-                cur = cur.next;
+        Node previous = FakeHead;
+        Node current = head;
+        while (current != null) {
+            while (current.next != null && current.data == current.next.data) {
+                current = current.next;
             }
-            if (pre.next == cur)
-            {
-                pre = pre.next; // // cur.val is distinct, move pre to next node
+            if (previous.next == current) {
+                previous = previous.next; // // cur.val is distinct, move pre to next node
             } else {
-                pre.next = cur.next; // skip duplicates, but pre shouldn't move now
+                previous.next = current.next; // skip duplicates, but pre shouldn't move now
             }
-            cur = cur.next;
+            current = current.next;
         }
         return FakeHead.next;
     }

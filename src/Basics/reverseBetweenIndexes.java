@@ -2,6 +2,10 @@ package Basics;
 
 import static LinkedListStructure.LinkedListStructure.*;
 
+// https://www.geeksforgeeks.org/reverse-sublist-linked-list/
+// https://leetcode.com/problems/reverse-linked-list-ii/
+// Hard
+// Reverse a sublist of linked list
 public class reverseBetweenIndexes {
     public Node reverseBetween(Node head, int m, int n) {
         if (head == null) {
