@@ -12,7 +12,12 @@ public class sortList {
         }
         // get the middle of the list
         Node middle = getMiddle(head);
+        Node middleNext = middle.next;
 
+        // set the next of middleNode to null
+        middle.next = null;
+
+       // mergeSort(middle);
 
         return null;
     }

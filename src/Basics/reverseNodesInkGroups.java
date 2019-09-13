@@ -34,24 +34,66 @@ public class reverseNodesInkGroups {
     }
 
 
-    // 2nd way - Usual way
-    public Node reveseGrps(Node head, int k) {
+    // 2nd way - Usual way - Basic
+    // Use Normal linked list reversal -- Do count till k
+    // If the next != null than make recursive call
+    public Node reveseGrps(Node head, int k, int length) {
         int count = 0;
         Node next = null;
         Node current = head;
         Node prev = null;
+
+
         while (current != null && count < k) {
             next = current.next;
             current.next = prev;
             prev = current;
             current = next;
             count++;
+            length--;
         }
-        if (next != null) {
-            head.next = reveseGrps(next, k);
+        if (next != null && length >= k) {
+            head.next = reveseGrps(next, k, length);
         }
         Node temp = prev;
         return temp;
+    }
+
+    Node reverse(Node head, int k) {
+        Node current = head;
+        Node next = null;
+        Node prev = null;
+
+        int count = 0;
+
+        /* Reverse first k nodes of linked list */
+        while (count < k && current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+            count++;
+        }
+
+       /* next is now a pointer to (k+1)th node
+          Recursively call for the list starting from current.
+          And make rest of the list as next of first node */
+        if (next != null)
+            head.next = reverse(next, k);
+
+        // prev is now head of input list
+        return prev;
+    }
+
+    int countLength(Node head) {
+        Node temporary = head;
+        int length = 0;
+        while (temporary != null) {
+            temporary = temporary.next;
+            length++;
+        }
+        System.out.println("The length is " + length);
+        return length;
     }
 
 
@@ -70,21 +112,12 @@ public class reverseNodesInkGroups {
         printList(); // 10 20 30 40 50 60 70
 
         Node temp = head;
-        Node temp1 = head;
-        Node node1 = reverseNodesInGroups.reveseGrps(temp, 3);
-
-        printList(node1);
 
 
-        Node node11 = reverseNodesInGroups.reverseInGroups(temp1, 3);
-        printList(node11);
+        int length = new reverseNodesInkGroups().countLength(head);
 
-
-
-
-      /*  Node node = reverseNodesInGroups.reverseInGroups(head, 3);
-
-        printList(node);*/
+        Node reverseGroups = reverseNodesInGroups.reveseGrps(temp, 3, length);
+        printList(reverseGroups);
 
 
     }

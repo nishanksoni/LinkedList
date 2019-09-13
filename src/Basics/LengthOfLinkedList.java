@@ -1,5 +1,7 @@
 package Basics;
 
+import LinkedListStructure.LinkedListStructure;
+
 import static LinkedListStructure.LinkedListStructure.*;
 
 // Same as traversing the linked list
@@ -40,10 +42,14 @@ public class LengthOfLinkedList {
         push(1);
 
         int count = new LengthOfLinkedList().getCount(head);
+
+
+
+
         System.out.println("Length of a linked list by iterative way is  " + count);
 
 
-        int countRec = new LengthOfLinkedList().getCountRec(head);
+        int countRec = new LengthOfLinkedList().getCountRec(LinkedListStructure.head);
         System.out.println("Length of a linked list by recursion is  " + countRec);
     }
 

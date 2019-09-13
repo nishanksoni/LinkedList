@@ -2,7 +2,9 @@ package Interviewbit;
 
 import static LinkedListStructure.LinkedListStructure.*;
 
+// https://leetcode.com/problems/merge-k-sorted-lists/
 public class MergeKSortedListAnotherWay {
+    // Using Divide and conquer
     public Node mergeKLists(Node[] lists) {
         if (lists == null || lists.length == 0) {
             return null;
