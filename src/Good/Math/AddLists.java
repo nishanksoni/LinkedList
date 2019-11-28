@@ -1,6 +1,8 @@
-package Good;
+package Good.Math;
 
 import static LinkedListStructure.LinkedListStructure.*;
+
+// https://leetcode.com/problems/add-two-numbers/
 
 public class AddLists {
     Node head1, head2;

@@ -4,8 +4,9 @@ import static LinkedListStructure.LinkedListStructure.*;
 
 // Runner technique
 // Best optimized way
-//  First get the middle node  -- reverse second half -- compare first and second half
+// First get the middle node  -- reverse second half -- compare first and second half
 // combination of two programs
+// https://leetcode.com/problems/palindrome-linked-list/
 public class PalindromeList {
 
 
@@ -41,9 +42,12 @@ public class PalindromeList {
         Node next;
 
         while (current != null) {
+            // We are storing currents next pointer
             next = current.next;
             current.next = prev;
+            // We are putting previous to currents position
             prev = current;
+            // We are making current to go one step ahead
             current = next;
         }
         Node head = prev;

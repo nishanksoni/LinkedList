@@ -13,8 +13,7 @@ public class reverseLinkedListInPairs {
 
     private void reverseInPairs() {
         Node current = head;
-        while (current != null && current.next != null)
-        {
+        while (current != null && current.next != null) {
             // Swap the data
             int data = current.data;
             current.data = current.next.data;

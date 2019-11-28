@@ -1,20 +1,17 @@
 package Interviewbit;
 
 import static LinkedListStructure.LinkedListStructure.*;
-
+// https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 
 public class RemoveDuplicatesFromSortedList {
 
     private Node removeDuplicates(Node head) {
         Node temp = head;
-        while (temp != null)
-        {
-            if (temp.next == null)
-            {
+        while (temp != null) {
+            if (temp.next == null) {
                 break;
             }
-            if (temp.data == temp.next.data)
-            {
+            if (temp.data == temp.next.data) {
                 temp.next = temp.next.next;
             } else {
                 temp = temp.next;

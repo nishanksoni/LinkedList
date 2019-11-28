@@ -1,6 +1,7 @@
 package Basics;
 
 import static LinkedListStructure.LinkedListStructure.*;
+
 //Time Complexity: O(n)
 // Space Complexity: O(1)
 // Basic linked list reversal where you only need to change the pointers

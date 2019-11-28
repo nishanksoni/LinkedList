@@ -14,6 +14,7 @@ public class MergeKSortedListAnotherWay {
 
     private Node sort(Node[] lists, int low, int high) {
         if (low >= high) {
+
             return lists[low];
         }
         int mid = low + (high - low) / 2;

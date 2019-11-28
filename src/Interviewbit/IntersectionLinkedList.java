@@ -2,13 +2,17 @@ package Interviewbit;
 
 import static LinkedListStructure.LinkedListStructure.*;
 
+// Time complexity : O(m+n).
+//Space complexity : O(1).
 // Example : Metro map
 // Merge point of two linked list
 // https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49785/Java-solution-without-knowing-the-difference-in-len!
 // It works because pointer A walks through List A and List B (since once it hits null, it goes to List B's head).
-//Pointer B also walks through List B and List A.
-//Regardless of the length of the two lists, the sum of the lengths are the same (i.e. a+b = b+a),
+// Pointer B also walks through List B and List A.
+// Regardless of the length of the two lists, the sum of the lengths are the same (i.e. a+b = b+a),
 // which means that the pointers sync up at the point of intersection.
+
+// https://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/
 public class IntersectionLinkedList {
     Node head1, head2;
 
@@ -71,4 +75,5 @@ public class IntersectionLinkedList {
         printList(intersectionNode);
 
     }
+
 }

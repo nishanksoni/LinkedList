@@ -1,11 +1,12 @@
 package Basics;
 // https://leetcode.com/problems/reverse-nodes-in-k-group/
+// https://www.geeksforgeeks.org/reverse-linked-list-groups-given-size-set-2/
+// Ultimate Question
 
 import static LinkedListStructure.LinkedListStructure.*;
 
+// Reverse a linked list of given size
 public class reverseNodesInkGroups {
-
-
     // 1st Way
     private Node reverseInGroups(Node head, int k) {
         //1. test weather we have more then k node left, if less then k node left we just return head
@@ -28,72 +29,9 @@ public class reverseNodesInkGroups {
             current.next = previous;
             previous = current;
             current = next;
-            count = count - 1;
+            count--;
         }
         return previous;
-    }
-
-
-    // 2nd way - Usual way - Basic
-    // Use Normal linked list reversal -- Do count till k
-    // If the next != null than make recursive call
-    public Node reveseGrps(Node head, int k, int length) {
-        int count = 0;
-        Node next = null;
-        Node current = head;
-        Node prev = null;
-
-
-        while (current != null && count < k) {
-            next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
-            count++;
-            length--;
-        }
-        if (next != null && length >= k) {
-            head.next = reveseGrps(next, k, length);
-        }
-        Node temp = prev;
-        return temp;
-    }
-
-    Node reverse(Node head, int k) {
-        Node current = head;
-        Node next = null;
-        Node prev = null;
-
-        int count = 0;
-
-        /* Reverse first k nodes of linked list */
-        while (count < k && current != null) {
-            next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
-            count++;
-        }
-
-       /* next is now a pointer to (k+1)th node
-          Recursively call for the list starting from current.
-          And make rest of the list as next of first node */
-        if (next != null)
-            head.next = reverse(next, k);
-
-        // prev is now head of input list
-        return prev;
-    }
-
-    int countLength(Node head) {
-        Node temporary = head;
-        int length = 0;
-        while (temporary != null) {
-            temporary = temporary.next;
-            length++;
-        }
-        System.out.println("The length is " + length);
-        return length;
     }
 
 
@@ -111,13 +49,9 @@ public class reverseNodesInkGroups {
 
         printList(); // 10 20 30 40 50 60 70
 
-        Node temp = head;
-
-
-        int length = new reverseNodesInkGroups().countLength(head);
-
-        Node reverseGroups = reverseNodesInGroups.reveseGrps(temp, 3, length);
-        printList(reverseGroups);
+        Node temp1 = head;
+        Node node = reverseNodesInGroups.reverseInGroups(temp1, 3);
+        printList(node);
 
 
     }

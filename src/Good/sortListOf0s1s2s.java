@@ -3,6 +3,7 @@ package Good;
 // https://www.geeksforgeeks.org/sort-a-linked-list-of-0s-1s-or-2s/
 // 1st is basic way like we do for array
 
+// Very Good concept involved to play with array
 import LinkedListStructure.LinkedListStructure.*;
 
 import static LinkedListStructure.LinkedListStructure.*;
